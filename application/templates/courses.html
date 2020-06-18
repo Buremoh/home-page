@@ -1,0 +1,44 @@
+{% extends "layout.html" %} {% include "includes/nav.html" %} {% block body %}
+
+<h1>Course Offerings</h1>
+<h2>Term:Cohort 1 2020</h2>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">CourseID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Duration</th>
+        <th scope="col">Term</th>
+        <th scope="col">Enroll</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for data in courses %}
+      <tr>
+        <td scopes="new">{{data["courseID"]}}</td>
+        <td>{{data['title']}}</td>
+        <td>{{data['description']}}</td>
+        <td>{{data['duration']}}</td>
+        <td>{{data['term']}}</td>
+        <td><button class="btn btn-danger">Enroll</button></td>
+      </tr>
+
+      <td>
+        <form>
+          <input type="hidden" name="courseID" value="{{data['courseID']}}" />
+          <input type="hidden" name="title" value="{{data['title']}}" />
+          <input type="hidden" name="title" value="{{data['description']}}" />
+          <input type="hidden" name="title" value="{{data['duration']}}" />
+          <input type="hidden" name="term" value="{{data['term']}}" />
+        </form>
+      </td>
+
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

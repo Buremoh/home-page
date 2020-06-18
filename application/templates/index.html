@@ -1,0 +1,29 @@
+{% extends "layout.html" %} {% include "includes/nav.html" %} {% block body %}
+
+<header>
+  <div class="row">
+    <div class="logo">
+      <img
+        src="{{url_for('static', filename='images/logo.png')}}"
+        class="img-responsive"
+      />
+    </div>
+    <ul class="main-nav">
+      <li><a href="">HOME</a></li>
+      <li><a href="">SERVICES</a></li>
+      <li><a href="">ABOUT</a></li>
+      <li><a href="">CONTACT</a></li>
+      <li><a href="">NEWS</a></li>
+      <li><a href="">FAQ</a></li>
+    </ul>
+  </div>
+
+  <div class="hero">
+    <h1>Are You Ready?</h1>
+    <div class="button">
+      <a href="" class="btn btn-one">Whatch Video</a>
+      <a href="" class="btn btn-two">Explore More</a>
+    </div>
+  </div>
+</header>
+{% endblock %}
